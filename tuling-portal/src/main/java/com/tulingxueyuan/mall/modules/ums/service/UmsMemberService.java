@@ -2,7 +2,7 @@ package com.tulingxueyuan.mall.modules.ums.service;
 
 import com.tulingxueyuan.mall.modules.ums.model.UmsMember;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.validation.constraints.NotBlank;
 

@@ -43,7 +43,7 @@ public class HomeController {
 
         HomeMenusBannerDTO homeMenusBannerDTO = new HomeMenusBannerDTO();
         homeMenusBannerDTO.setHomeMenusList(list);
-        homeMenusBannerDTO.setHomeAdvertiseList(homeAdvertiseList);
+        homeMenusBannerDTO.setHomeAdvertisesList(homeAdvertiseList);
         return CommonResult.success(homeMenusBannerDTO);
     }
 

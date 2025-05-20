@@ -11,5 +11,5 @@ import java.util.List;
 @ApiModel(value="首页类型导航栏和banner组合数据传输对象", description="首页类型导航栏和banner数据")
 public class HomeMenusBannerDTO {
     private List<HomeMenusDTO>  homeMenusList;
-    private List<SmsHomeAdvertise> homeAdvertiseList;
+    private List<SmsHomeAdvertise> homeAdvertisesList;
 }

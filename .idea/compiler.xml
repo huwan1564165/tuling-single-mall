@@ -9,10 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tuling-common" />
         <module name="tuling-test" />
-        <module name="tuling-admin" />
         <module name="tuling-portal" />
-        <module name="tuling-security" />
         <module name="tuling-mpbg" />
+        <module name="tuling-security (1)" />
+        <module name="tuling-admin" />
+        <module name="tuling-security" />
       </profile>
     </annotationProcessing>
   </component>
@@ -22,7 +23,8 @@
       <module name="tuling-common" options="-parameters" />
       <module name="tuling-mpbg" options="-parameters" />
       <module name="tuling-portal" options="-parameters" />
-      <module name="tuling-security" options="-parameters" />
+      <module name="tuling-security" options="" />
+      <module name="tuling-security (1)" options="-parameters" />
       <module name="tuling-test" options="-parameters" />
     </option>
   </component>

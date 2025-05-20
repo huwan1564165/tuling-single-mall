@@ -37,7 +37,7 @@
             p.pic pro_pic,
             p.price pro_price,
             p.original_price pro_original_price,
-            p.sub_title pro_sub_title
+            p.sub_title pro_sub_title,
             (SELECT AVG(price)=price FROM pms_sku_stock ss where ss.product_id=p.id) sub
         FROM sms_home_category hc
                  left join pms_product p on hc.category_id=p.product_category_id and delete_status=0 and recommand_status=1

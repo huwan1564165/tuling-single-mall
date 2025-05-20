@@ -21,7 +21,7 @@
     <resultMap id="productWithCategoryMap" type="com.tulingxueyuan.mall.modules.pms.model.dto.HomeMenusDTO">
         <result property="id" column="id"/>
         <result property="name" column="name"/>
-        <collection property="productList" ofType="com.tulingxueyuan.mall.modules.pms.model.dto.HomeMenusDTO">
+        <collection property="productList" ofType="com.tulingxueyuan.mall.modules.pms.model.dto.ProductDTO">
             <id property="id" column="pro_id"/>
             <result property="name" column="pro_name"/>
             <result property="pic" column="pro_pic"/>
