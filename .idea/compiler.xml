@@ -11,11 +11,13 @@
         <module name="tuling-test" />
         <module name="tuling-portal" />
         <module name="tuling-mpbg" />
-        <module name="tuling-security (1)" />
         <module name="tuling-admin" />
         <module name="tuling-security" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tuling-security (1)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -23,7 +25,7 @@
       <module name="tuling-common" options="-parameters" />
       <module name="tuling-mpbg" options="-parameters" />
       <module name="tuling-portal" options="-parameters" />
-      <module name="tuling-security" options="" />
+      <module name="tuling-security" options="-parameters" />
       <module name="tuling-security (1)" options="-parameters" />
       <module name="tuling-test" options="-parameters" />
     </option>
