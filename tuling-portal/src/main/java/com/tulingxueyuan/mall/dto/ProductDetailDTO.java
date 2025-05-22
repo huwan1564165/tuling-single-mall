@@ -1,4 +1,4 @@
-package com.tulingxueyuan.mall.modules.pms.model.dto;
+package com.tulingxueyuan.mall.dto;
 
 import com.tulingxueyuan.mall.modules.pms.model.*;
 import io.swagger.annotations.ApiModel;

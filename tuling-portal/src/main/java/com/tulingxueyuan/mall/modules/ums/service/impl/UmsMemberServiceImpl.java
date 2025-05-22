@@ -1,9 +1,12 @@
 package com.tulingxueyuan.mall.modules.ums.service.impl;
 
 import cn.hutool.crypto.digest.BCrypt;
+import com.alipay.api.domain.UserDetails;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.tulingxueyuan.mall.common.api.CommonResult;
 import com.tulingxueyuan.mall.common.exception.ApiException;
 import com.tulingxueyuan.mall.common.exception.Asserts;
+import com.tulingxueyuan.mall.common.util.ComConstants;
 import com.tulingxueyuan.mall.modules.ums.mapper.UmsMemberLoginLogMapper;
 import com.tulingxueyuan.mall.modules.ums.model.UmsMember;
 import com.tulingxueyuan.mall.modules.ums.mapper.UmsMemberMapper;
@@ -11,6 +14,7 @@ import com.tulingxueyuan.mall.modules.ums.model.UmsMemberLoginLog;
 import com.tulingxueyuan.mall.modules.ums.service.UmsMemberCacheService;
 import com.tulingxueyuan.mall.modules.ums.service.UmsMemberService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 /*import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,6 +27,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +45,8 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
     UmsMemberCacheService memberCacheService;
     @Autowired
     UmsMemberLoginLogMapper loginLogMapper;
+    @Autowired
+    HttpSession session;
 
     @Override
     public UmsMember register(UmsMember umsMemberParam) {
@@ -89,7 +96,7 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
         loginLogMapper.insert(loginLog);
     }
 
-    private UmsMember getMemberByUsername(String username) {
+    public UmsMember getMemberByUsername(String username) {
         UmsMember user=memberCacheService.getUser(username);
         if(user!=null)return user;
         QueryWrapper<UmsMember> wrapper = new QueryWrapper<>();
@@ -102,4 +109,10 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
         }
         return null;
     }
+
+    public UmsMember getCurrentMember() {
+        UmsMember umsMember = (UmsMember) session.getAttribute(ComConstants.FLAG_MEMEBER_USER);
+        return umsMember;
+    }
+
 }
