@@ -1,6 +1,8 @@
 package com.tulingxueyuan.mall.modules.oms.model;
 
 import java.math.BigDecimal;
+
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
@@ -73,6 +75,7 @@ public class OmsCartItem implements Serializable {
     private Date modifyDate;
 
     @ApiModelProperty(value = "是否删除")
+    @TableLogic(value = "0",delval = "1")
     private Integer deleteStatus;
 
     @ApiModelProperty(value = "商品分类")
@@ -82,7 +85,7 @@ public class OmsCartItem implements Serializable {
 
     private String productSn;
 
-    @ApiModelProperty(value = "商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]")
+    //@ApiModelProperty(value = "商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]")
     private String productAttr;
 
 

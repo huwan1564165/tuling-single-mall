@@ -15,13 +15,11 @@ import com.tulingxueyuan.mall.modules.ums.service.UmsAdminService;
 import com.tulingxueyuan.mall.modules.ums.service.UmsRoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.service.AuthorizationScope;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

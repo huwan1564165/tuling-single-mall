@@ -2,7 +2,6 @@ package com.tulingxueyuan.mall.controller;
 
 import com.tulingxueyuan.mall.common.api.CommonResult;
 import com.tulingxueyuan.mall.common.util.ComConstants;
-import com.tulingxueyuan.mall.modules.ums.model.UmsAdmin;
 import com.tulingxueyuan.mall.modules.ums.model.UmsMember;
 import com.tulingxueyuan.mall.modules.ums.service.UmsMemberService;
 import io.swagger.annotations.Api;
@@ -10,7 +9,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +25,7 @@ public class UserController {
     UmsMemberService umsMemberService;
     @Autowired
     HttpSession session;
+
 
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -48,9 +47,8 @@ public class UserController {
             return CommonResult.validateFailed("用户名或密码错误");
         }
         session.setAttribute(ComConstants.FLAG_CURRENT_USER,login);
-        System.out.println(session.getId());
+
         Map<String, String> tokenMap = new HashMap<>();
-        // jwt
         return CommonResult.success(login);
     }
 }

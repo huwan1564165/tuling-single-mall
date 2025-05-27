@@ -47,11 +47,11 @@
         <result column="brand_name" property="brandName" />
         <result column="product_category_name" property="productCategoryName" />
     </resultMap>
-    <resultMap id="ProductDetailMap" extends="BaseResultMap" type="com.tulingxueyuan.mall.modules.pms.model.dto.ProductDetailDTO">
+    <resultMap id="ProductDetailMap" extends="BaseResultMap" type="com.tulingxueyuan.mall.dto.ProductDetailDTO">
         <!--sku-->
         <collection property="skuStockList" columnPrefix="sku_" resultMap="com.tulingxueyuan.mall.modules.pms.mapper.PmsSkuStockMapper.BaseResultMap"></collection>
         <!--spk-->
-        <collection property="productAttributeValueList" columnPrefix="att_" ofType="com.tulingxueyuan.mall.modules.pms.model.dto.PmsProductAttributeValueDTo">
+        <collection property="productAttributeValueList" columnPrefix="att_" ofType="com.tulingxueyuan.mall.dto.PmsProductAttributeValueDTo">
             <id column="id" property="id" />
             <result column="product_id" property="productId" />
             <result column="product_attribute_id" property="productAttributeId" />

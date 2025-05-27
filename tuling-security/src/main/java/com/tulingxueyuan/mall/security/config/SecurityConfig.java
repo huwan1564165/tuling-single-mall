@@ -1,6 +1,5 @@
 package com.tulingxueyuan.mall.security.config;
 
-import com.tulingxueyuan.mall.common.util.JwtTokenUtil;
 import com.tulingxueyuan.mall.security.config.component.*;
 import com.tulingxueyuan.mall.security.config.component.dynamicSecurity.DynamicAccessDecisionManager;
 import com.tulingxueyuan.mall.security.config.component.dynamicSecurity.DynamicSecurityFilter;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;

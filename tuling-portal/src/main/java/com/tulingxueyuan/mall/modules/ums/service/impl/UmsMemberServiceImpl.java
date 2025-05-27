@@ -111,7 +111,7 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
     }
 
     public UmsMember getCurrentMember() {
-        UmsMember umsMember = (UmsMember) session.getAttribute(ComConstants.FLAG_MEMEBER_USER);
+        UmsMember umsMember = (UmsMember) session.getAttribute(ComConstants.FLAG_CURRENT_USER);
         return umsMember;
     }
 
