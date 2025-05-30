@@ -1,5 +1,6 @@
 package com.tulingxueyuan.mall.security.config;
 
+import com.tulingxueyuan.mall.common.util.JwtTokenUtil;
 import com.tulingxueyuan.mall.security.config.component.*;
 import com.tulingxueyuan.mall.security.config.component.dynamicSecurity.DynamicAccessDecisionManager;
 import com.tulingxueyuan.mall.security.config.component.dynamicSecurity.DynamicSecurityFilter;

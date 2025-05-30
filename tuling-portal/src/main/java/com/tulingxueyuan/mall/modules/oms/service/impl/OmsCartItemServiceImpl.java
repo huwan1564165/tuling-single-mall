@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.tulingxueyuan.mall.common.api.ResultCode;
 import com.tulingxueyuan.mall.common.exception.Asserts;
 import com.tulingxueyuan.mall.dto.AddCarDTO;
+import com.tulingxueyuan.mall.dto.CartItemStockDTO;
 import com.tulingxueyuan.mall.modules.oms.model.OmsCartItem;
 import com.tulingxueyuan.mall.modules.oms.mapper.OmsCartItemMapper;
 import com.tulingxueyuan.mall.modules.oms.service.OmsCartItemService;
@@ -39,6 +40,8 @@ public class OmsCartItemServiceImpl extends ServiceImpl<OmsCartItemMapper, OmsCa
     PmsSkuStockService skuStockService;
     @Autowired
     PmsProductService productService;
+    @Autowired
+    OmsCartItemMapper cartItemMapper;
 
     @Override
     public Boolean add(AddCarDTO addCarDTO) {
@@ -126,11 +129,12 @@ public class OmsCartItemServiceImpl extends ServiceImpl<OmsCartItemMapper, OmsCa
      * @return
      */
     @Override
-    public List<OmsCartItem> getList() {
+    public List<CartItemStockDTO> getList() {
         //1.当前用户
-        QueryWrapper<OmsCartItem> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(OmsCartItem::getMemberId, memberService.getCurrentMember().getId());
-        return this.list(queryWrapper);
+        UmsMember currentMember = memberService.getCurrentMember();
+        List<CartItemStockDTO> list = cartItemMapper.getCartItemStork(currentMember.getId());
+
+        return list;
     }
     /**
      * 更新商品的数量

@@ -15,9 +15,9 @@ logging:
     root: info
     com.tulingxueyuan: debug
 
-#trade:
-#  zhifu:
-#    qrcode:
-#      httpBasePath: /static/qrcode
-#      paySuccessCallBack: http://tulingmall.free.idcfengye.com/order/paySuccess
-#      storePath: D:/temp/qr-code
+trade:
+  zhifu:
+    qrcode:
+      httpBasePath: /static/qrcode
+      paySuccessCallBack: http://1074ts98cm608.vicp.fun/#/order/paySuccess
+      storePath: D:/temp/qr-code

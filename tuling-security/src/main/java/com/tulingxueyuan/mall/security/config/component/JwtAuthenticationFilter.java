@@ -1,6 +1,7 @@
 package com.tulingxueyuan.mall.security.config.component;
 
 import cn.hutool.core.util.StrUtil;
+import com.tulingxueyuan.mall.common.util.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

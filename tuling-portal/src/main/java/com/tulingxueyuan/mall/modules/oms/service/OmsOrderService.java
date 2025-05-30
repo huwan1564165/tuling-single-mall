@@ -1,7 +1,11 @@
 package com.tulingxueyuan.mall.modules.oms.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.tulingxueyuan.mall.dto.ConfirmOrderDTO;
+import com.tulingxueyuan.mall.dto.OrderDetailDTO;
+import com.tulingxueyuan.mall.dto.OrderListDTO;
+import com.tulingxueyuan.mall.dto.OrderParamDTO;
 import com.tulingxueyuan.mall.modules.oms.model.OmsOrder;
 
 import java.util.List;
@@ -21,4 +25,25 @@ public interface OmsOrderService extends IService<OmsOrder> {
      * @return
      */
     ConfirmOrderDTO generateConfirmOrder(List<Long> ids);
+
+    /**
+     * 生成订单(下单)
+     * @param orderParamDTO
+     * @return
+     */
+    OmsOrder generateOrder(OrderParamDTO orderParamDTO);
+
+    /**
+     * 读取下单成功后的订单详情
+     * @param id
+     * @return
+     */
+    OrderDetailDTO getOrderDetail(Long id);
+
+    void cancelOverTimeOrder();
+
+
+    IPage<OrderListDTO> getMyOrders(Integer pageSize, Integer pageNum);
+
+    void paySuccess(Long orderId, Integer payType);
 }

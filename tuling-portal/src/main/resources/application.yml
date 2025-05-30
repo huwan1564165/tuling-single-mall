@@ -22,6 +22,8 @@ redis:
     common: 86400 # 24小时
   key:
     user: 'ums:member:'
+    prefix:
+      orderId: 'portal:orderId:'
 
 
 

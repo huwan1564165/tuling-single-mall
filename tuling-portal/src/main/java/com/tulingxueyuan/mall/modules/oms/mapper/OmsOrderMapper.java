@@ -1,7 +1,14 @@
 package com.tulingxueyuan.mall.modules.oms.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.tulingxueyuan.mall.dto.OrderDetailDTO;
+import com.tulingxueyuan.mall.dto.OrderListDTO;
 import com.tulingxueyuan.mall.modules.oms.model.OmsOrder;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,5 +19,9 @@ import com.tulingxueyuan.mall.modules.oms.model.OmsOrder;
  * @since 2025-05-26
  */
 public interface OmsOrderMapper extends BaseMapper<OmsOrder> {
+
+    OrderDetailDTO getOrderDetail(Long id);
+
+    IPage<OrderListDTO> getMyOrders(Page<?> page, @Param("memberId") Long memberId);
 
 }

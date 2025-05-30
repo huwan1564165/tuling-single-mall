@@ -2,6 +2,7 @@ package com.tulingxueyuan.mall.controller;
 
 import com.tulingxueyuan.mall.common.api.CommonResult;
 import com.tulingxueyuan.mall.dto.AddCarDTO;
+import com.tulingxueyuan.mall.dto.CartItemStockDTO;
 import com.tulingxueyuan.mall.modules.oms.model.OmsCartItem;
 import com.tulingxueyuan.mall.modules.oms.service.OmsCartItemService;
 import io.swagger.annotations.Api;
@@ -49,7 +50,7 @@ public class CarController {
      */
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public CommonResult getList(){
-        List<OmsCartItem>  list= cartItemService.getList();
+        List<CartItemStockDTO>  list= cartItemService.getList();
         return CommonResult.success(list);
     }
     /**

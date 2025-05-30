@@ -1,6 +1,7 @@
 package com.tulingxueyuan.mall.modules.oms.service;
 
 import com.tulingxueyuan.mall.dto.AddCarDTO;
+import com.tulingxueyuan.mall.dto.CartItemStockDTO;
 import com.tulingxueyuan.mall.modules.oms.model.OmsCartItem;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -27,7 +28,7 @@ public interface OmsCartItemService extends IService<OmsCartItem> {
      * 初始化购物车数据
      * @return
      */
-    List<OmsCartItem> getList();
+    List<CartItemStockDTO> getList();
     /**
      * 更新商品的数量
      * this.axios.post('/car/update/quantity',Qs.stringify({
